@@ -1,0 +1,2 @@
+Vasya,3,false
+Nikita,3,true
