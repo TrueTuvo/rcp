@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_6wlLcMgZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.application" bindingContexts="_6wlLecgZEeSyMNYR5xypkQ">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.window.main" label="Eclipse 4 RCP Application" width="500" height="400">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_6wlLccgZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.window.main" selectedElement="_6wlLksgZEeSyMNYR5xypkQ" label="Eclipse 4 RCP Application" width="500" height="400">
     <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.partsashcontainer.sample" horizontal="true">
       <children xsi:type="basic:Part" xmi:id="_A1HxgEaXEeucIoVwdi_kWg" elementId="com.rcp.practice.zabara.part.tableviewer" contributionURI="bundleclass://com.rcp.practice.zabara/com.rcp.practice.zabara.parts.TableViewerPart" label="TableViewer">
         <handlers xmi:id="_bAxIgEnYEeucIoVwdi_kWg" elementId="com.rcp.practice.zabara.handler.tableViewer" contributionURI="bundleclass://com.rcp.practice.zabara/com.rcp.practice.zabara.handlers.TableViewerHandler"/>

@@ -4,19 +4,29 @@ package com.rcp.practice.zabara.parts;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.core.commands.Command;
 import org.eclipse.core.commands.ParameterizedCommand;
 import org.eclipse.e4.core.commands.ECommandService;
 import org.eclipse.e4.core.commands.EHandlerService;
+import org.eclipse.e4.ui.model.application.MApplication;
+import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+import org.eclipse.e4.ui.workbench.modeling.EModelService;
+import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+
 import com.rcp.practice.zabara.composite.attachments.MainComposite;
+import com.rcp.practice.zabara.handlers.NewHandler;
 
 
 
-@SuppressWarnings("restriction")
 public class CompositePart {
     private MainComposite mainComposite;
     
@@ -26,13 +36,9 @@ public class CompositePart {
 
     @Inject
     ESelectionService selectionService;
-    @SuppressWarnings("restriction")
-    ECommandService commandService;
-    @SuppressWarnings("restriction")
-    EHandlerService handleService;
 	
 	@PostConstruct
-	public void postConstruct(Composite parent) {
+	public void postConstruct(Composite parent, ECommandService commandService, EHandlerService handleService) {
 	     mainComposite = new MainComposite(parent, SWT.NONE); 
 	    Person person = (Person) selectionService.getSelection();
 	    if (person != null) {
@@ -42,24 +48,43 @@ public class CompositePart {
 	         
 	    }
 	    mainComposite.getNewButton().addSelectionListener(new SelectionAdapter() {
-          @SuppressWarnings("restriction")
-        @Override
+          @Override
           public void widgetSelected(SelectionEvent e) {
-              try {
-                  ParameterizedCommand cmd =
-                          commandService.createCommand("com.rcp.practice.zabara.command.new");
-                  
-                  handleService.executeHandler(cmd);
-              } catch (Exception ex) {
-                  throw new RuntimeException("command with id \"com.rcp.practice.zabara.command.new\" not found");
-              }
+              ParameterizedCommand cmd =
+                      commandService.createCommand("com.rcp.practice.zabara.command.new", null);
 
+                  handleService.executeHandler(cmd);
+          
+          }
+      });
+	    mainComposite.getSaveButton().addSelectionListener(new SelectionAdapter() {
+          public void widgetSelected(SelectionEvent e) {
+              ParameterizedCommand cmd =
+                      commandService.createCommand("org.eclipse.ui.file.save", null);
+
+                  handleService.executeHandler(cmd);
+          
           }
       });
 
+      mainComposite.getResetButton().addSelectionListener(new SelectionAdapter() {
+          public void widgetSelected(SelectionEvent e) {
+              ParameterizedCommand cmd =
+                      commandService.createCommand("com.rcp.practice.zabara.command.cancel", null);
 
-		
+                  handleService.executeHandler(cmd);
+          
+          }
+      });
+      
+      mainComposite.getDeleteButton().addSelectionListener(new SelectionAdapter() {
+          public void widgetSelected(SelectionEvent e) {
+              ParameterizedCommand cmd =
+                      commandService.createCommand("com.rcp.practice.zabara.command.delete", null);
+
+                  handleService.executeHandler(cmd);
+          
+          }
+      });
 	}
-	
-	
 }
