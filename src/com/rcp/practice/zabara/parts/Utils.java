@@ -1,5 +1,12 @@
 package com.rcp.practice.zabara.parts;
 
+import java.net.URL;
+
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.swt.graphics.Image;
+
 import com.rcp.practice.zabara.composite.attachments.MainComposite;
 
 /**
@@ -94,5 +101,21 @@ public class Utils {
     public static boolean isName(String str) {
 
         return str.length() < 100;
+    }
+
+    public static Image getImageByPath() {
+        Image result = null;
+
+        try {
+            URL imageURL = new URL("platform:/plugin/com.rcp.practice.zabara/icons/ñapture.png");
+            ImageDescriptor id = ImageDescriptor.createFromURL(imageURL);
+            result = id.createImage();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+        return result;
     }
 }

@@ -36,6 +36,7 @@
   <handlers xmi:id="_6wlLh8gZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.handler.aboutCommand" contributionURI="bundleclass://com.rcp.practice.zabara/com.rcp.practice.zabara.handlers.AboutHandler" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_g-wocEj9EeucIoVwdi_kWg" elementId="com.rcp.practice.zabara.handler.deleteCommand" contributionURI="bundleclass://com.rcp.practice.zabara/com.rcp.practice.zabara.handlers.DeleteHendler" command="__KdAcEj8EeucIoVwdi_kWg"/>
   <handlers xmi:id="_xT2AgEj9EeucIoVwdi_kWg" elementId="com.rcp.practice.zabara.handler.cancelCommand" contributionURI="bundleclass://com.rcp.practice.zabara/com.rcp.practice.zabara.handlers.CancelHandler" command="_5kNJoEj8EeucIoVwdi_kWg"/>
+  <handlers xmi:id="_g5BYAE_8Eeu0j5Y9YZVquA" elementId="com.rcp.practice.zabara.handler.0" contributionURI="bundleclass://com.rcp.practice.zabara/com.rcp.practice.zabara.handlers.CloseHandler"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
     <bindings xmi:id="_6wlLf8gZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.keybinding.m1q" keySequence="M1+Q" command="_6wlLfMgZEeSyMNYR5xypkQ"/>
     <bindings xmi:id="_6wlLgsgZEeSyMNYR5xypkQ" elementId="com.rcp.practice.zabara.keybinding.m1o" keySequence="M1+O"/>
@@ -59,4 +60,5 @@
   <addons xmi:id="_6wlLdsgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.handler.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_6wlLd8gZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.contexts.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.ContextProcessingAddon"/>
   <addons xmi:id="_6wlLeMgZEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.workbench.bindings.model" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.swt/org.eclipse.e4.ui.workbench.swt.util.BindingProcessingAddon"/>
+  <addons xmi:id="_tG3kYFA9EeurH5BNROCOpg" elementId="com.rcp.practice.zabara.addon.ExampleWindowCloseAddon" contributionURI="bundleclass://com.rcp.practice.zabara/com.rcp.practice.zabara.parts.ExampleWindowCloseAddon"/>
 </application:Application>

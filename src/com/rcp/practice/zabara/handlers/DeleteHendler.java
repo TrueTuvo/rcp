@@ -13,7 +13,9 @@ public class DeleteHendler {
 	public void execute(EPartService partService) {
 	    MPart tableviewerPart = (MPart) partService.findPart("com.rcp.practice.zabara.part.tableviewer");
       TableViewerPart tableViewerPart2 = (TableViewerPart) tableviewerPart.getObject();
+      if (tableViewerPart2.getTableViewerAdapter().getCurrentPerson() != null) {
       new DeletePersonDialog(tableViewerPart2.getTableViewerAdapter()).open();
+      }
 	}
 		
 }

@@ -46,13 +46,7 @@ public enum ModelProvider {
             e2.printStackTrace();
         }
         File file = null;
-        try {
-            file = new File(FileLocator.resolve(url).toURI());
-        } catch (URISyntaxException e1) {
-            e1.printStackTrace();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
+        file = new File("C:\\luxoft\\database.txt");
 
         if (!file.exists()) {
             try {
