@@ -1,4 +1,4 @@
-package com.rcp.practice.zabara.parts;
+package com.rcp.practice.zabara.jface;
 
 
 import org.eclipse.jface.viewers.ArrayContentProvider;
@@ -81,7 +81,7 @@ public class TableViewerAdapter {
      */
     private void createColumns(final Composite parent, final TableViewer viewer) {
         String[] titles = { "Name", "Group", "swtDone" };
-        int[] bounds = { 100, 100, 100 };
+        int[] bounds = { 100, 70, 60 };
 
         // First column is for the name
         TableViewerColumn col = createTableViewerColumn(titles[0], bounds[0], 0);

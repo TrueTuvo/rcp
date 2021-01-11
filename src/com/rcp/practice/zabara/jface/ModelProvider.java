@@ -1,4 +1,4 @@
-package com.rcp.practice.zabara.parts;
+package com.rcp.practice.zabara.jface;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,14 +6,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Platform;
-import org.osgi.framework.Bundle;
 
 /**
  * 

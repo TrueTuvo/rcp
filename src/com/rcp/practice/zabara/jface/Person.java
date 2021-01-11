@@ -1,4 +1,4 @@
-package com.rcp.practice.zabara.parts;
+package com.rcp.practice.zabara.jface;
 
 
 import java.io.Serializable;

@@ -1,5 +1,4 @@
-package com.rcp.practice.zabara.parts;
-
+package com.rcp.practice.zabara.jface;
 
 import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.jface.viewers.ColumnViewer;

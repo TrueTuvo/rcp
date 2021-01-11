@@ -10,14 +10,18 @@ import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Display;
 
-import com.rcp.practice.zabara.composite.attachments.MainComposite;
+import com.rcp.practice.zabara.jface.ModelProvider;
+import com.rcp.practice.zabara.jface.Person;
+import com.rcp.practice.zabara.jface.Utils;
 import com.rcp.practice.zabara.parts.CompositePart;
-import com.rcp.practice.zabara.parts.ModelProvider;
-import com.rcp.practice.zabara.parts.Person;
-import com.rcp.practice.zabara.parts.TableViewerAdapter;
 import com.rcp.practice.zabara.parts.TableViewerPart;
-import com.rcp.practice.zabara.parts.Utils;
 
+/**
+ * Handler, that will be use for saving person to the tableViewer
+ * 
+ * @author SZabara
+ *
+ */
 public class SaveHandler {
 
     @Inject
@@ -38,8 +42,8 @@ public class SaveHandler {
         String name = null;
         int group = 0;
         boolean swtDone = false;
-        MPart part = (MPart) partService.findPart("com.rcp.practice.zabara.part.compositepart");
-        CompositePart compositePart = (CompositePart) part.getObject(); 
+        MPart mPartC = (MPart) partService.findPart("com.rcp.practice.zabara.part.compositepart");
+        CompositePart compositePart = (CompositePart) mPartC.getObject();
         try {
             name = compositePart.getMainComposite().getNameTextField().getText();
             group = Integer.parseInt(compositePart.getMainComposite().getGroupTextField().getText());
@@ -50,9 +54,9 @@ public class SaveHandler {
         }
         if (Utils.isValidData(name, group)) {
             Person selectionPerson = (Person) selectionService.getSelection();
-            MPart tableviewerPart = (MPart) partService.findPart("com.rcp.practice.zabara.part.tableviewer");
-            TableViewerPart tableViewerPart2 = (TableViewerPart) tableviewerPart.getObject();
-            if (tableViewerPart2.getTableViewerAdapter().getCurrentPerson() == null) {
+            MPart mPartT = (MPart) partService.findPart("com.rcp.practice.zabara.part.tableviewer");
+            TableViewerPart tableViewerPart = (TableViewerPart) mPartT.getObject();
+            if (tableViewerPart.getTableViewerAdapter().getCurrentPerson() == null) {
 
                 MessageDialog.openInformation(Display.getCurrent().getActiveShell(), "Information",
                         "Please, choose a row for saving data");
@@ -60,7 +64,7 @@ public class SaveHandler {
                 for (Person availablePerson : ModelProvider.INSTANCE.getPersons()) {
                     if (selectionPerson.equals(availablePerson)) {
                         Utils.updatePersonData(availablePerson, name, group, swtDone);
-                        tableViewerPart2.getTableViewerAdapter().getViewer().refresh();
+                        tableViewerPart.getTableViewerAdapter().getViewer().refresh();
                     }
                 }
             }

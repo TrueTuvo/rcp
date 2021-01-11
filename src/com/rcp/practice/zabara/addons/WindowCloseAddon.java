@@ -1,4 +1,4 @@
-package com.rcp.practice.zabara.parts;
+package com.rcp.practice.zabara.addons;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -15,20 +15,26 @@ import org.eclipse.e4.ui.workbench.UIEvents;
 import org.eclipse.e4.ui.workbench.modeling.EModelService;
 import org.eclipse.e4.ui.workbench.modeling.IWindowCloseHandler;
 
-public class ExampleWindowCloseAddon implements IWindowCloseHandler
-{
+import com.rcp.practice.zabara.jface.ModelProvider;
+import com.rcp.practice.zabara.jface.Person;
+
+/**
+ * Saves data to the external database
+ * 
+ * @author SZabara
+ *
+ */
+public class WindowCloseAddon implements IWindowCloseHandler {
     @Inject
     @Optional
     public void startupComplete(@UIEventTopic(UIEvents.UILifeCycle.APP_STARTUP_COMPLETE) MApplication application,
-            EModelService modelService)
-    {
+            EModelService modelService) {
         MWindow window = (MWindow) modelService.find("com.rcp.practice.zabara.window.main", application);
         window.getContext().set(IWindowCloseHandler.class, this);
     }
 
     @Override
-    public boolean close(MWindow window)
-    {
+    public boolean close(MWindow window) {
         try {
             FileWriter tfw = new FileWriter(new File("C:\\luxoft\\database.txt"));
             BufferedWriter tbw = new BufferedWriter(tfw);

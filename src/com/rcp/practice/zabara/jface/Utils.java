@@ -1,10 +1,8 @@
-package com.rcp.practice.zabara.parts;
+package com.rcp.practice.zabara.jface;
 
 import java.net.URL;
 
 import org.eclipse.jface.resource.ImageDescriptor;
-import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.resource.JFaceResources;
 import org.eclipse.swt.graphics.Image;
 
 import com.rcp.practice.zabara.composite.attachments.MainComposite;

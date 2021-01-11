@@ -1,4 +1,4 @@
-package com.rcp.practice.zabara.parts;
+package com.rcp.practice.zabara.jface;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.SWT;
@@ -14,30 +14,29 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 
-
 /**
  * 
- * Every time, when user try to delete person, must confirm action in dialog window
+ * Creates a shell with information about app.
  * 
  * @author SZabara
  */
 public class AboutApplicationDialog extends MessageDialog {
 
-
     public AboutApplicationDialog() {
-        super(Display.getCurrent().getActiveShell(), "About", Utils.getImageByPath(), "My message", MessageDialog.INFORMATION, new String[] {"Ok"},0);
+        super(Display.getCurrent().getActiveShell(), "About", Utils.getImageByPath(), "My message",
+                MessageDialog.INFORMATION, new String[] { "Ok" }, 0);
     }
 
     @Override
     protected Control createDialogArea(Composite parent) {
-           parent.setLayout(new GridLayout(2,false));
-           Label label = new Label(parent, SWT.LEFT);
-           Image image= Utils.getImageByPath();
-           
-           label.setImage(image);
-           label = new Label(parent, SWT.LEFT);
-           label.setText("The  product is demo" + System.lineSeparator() + "(c) 2013");        
-           return parent;
+        parent.setLayout(new GridLayout(2, false));
+        Label label = new Label(parent, SWT.LEFT);
+        Image image = Utils.getImageByPath();
+
+        label.setImage(image);
+        label = new Label(parent, SWT.LEFT);
+        label.setText("The  product is demo" + System.lineSeparator() + "(c) 2013");
+        return parent;
 
     }
 
@@ -62,6 +61,6 @@ public class AboutApplicationDialog extends MessageDialog {
 
     @Override
     protected Point getInitialSize() {
-        return new Point(300,240);
+        return new Point(300, 240);
     }
 }

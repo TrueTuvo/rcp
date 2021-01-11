@@ -8,11 +8,15 @@ import org.eclipse.e4.ui.model.application.ui.basic.MPart;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 
+import com.rcp.practice.zabara.jface.Person;
+import com.rcp.practice.zabara.jface.Utils;
 import com.rcp.practice.zabara.parts.CompositePart;
-import com.rcp.practice.zabara.parts.Person;
 import com.rcp.practice.zabara.parts.TableViewerPart;
-import com.rcp.practice.zabara.parts.Utils;
-
+/**
+ * Handler that canceling change in a person
+ * @author SZabara
+ *
+ */
 public class CancelHandler {
     
     @Inject
@@ -20,15 +24,15 @@ public class CancelHandler {
     
 	@Execute
 	public void execute(EPartService partService) {
-      MPart tableviewerPart = (MPart) partService.findPart("com.rcp.practice.zabara.part.tableviewer");
-      TableViewerPart tableViewerPart2 = (TableViewerPart) tableviewerPart.getObject();
+      MPart mPartT = (MPart) partService.findPart("com.rcp.practice.zabara.part.tableviewer");
+      TableViewerPart tableViewerPart = (TableViewerPart) mPartT.getObject();
       
-      MPart mPart = (MPart) partService.findPart("com.rcp.practice.zabara.part.compositepart");
-      CompositePart compositePart = (CompositePart) mPart.getObject();
+      MPart mPartC = (MPart) partService.findPart("com.rcp.practice.zabara.part.compositepart");
+      CompositePart compositePart = (CompositePart) mPartC.getObject();
 
-	    if (tableViewerPart2.getTableViewerAdapter().getCurrentPerson() != null) {
+	    if (tableViewerPart.getTableViewerAdapter().getCurrentPerson() != null) {
           Utils.removeChangesPersonData(compositePart.getMainComposite(), (Person)selectionService.getSelection());
-          tableViewerPart2.getTableViewerAdapter().getViewer().refresh();
+          tableViewerPart.getTableViewerAdapter().getViewer().refresh();
       }
 	}
 		

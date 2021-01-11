@@ -1,4 +1,4 @@
-package com.rcp.practice.zabara.parts;
+package com.rcp.practice.zabara.jface;
 
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -11,7 +11,6 @@ import org.eclipse.swt.widgets.Shell;
 
 import com.rcp.practice.zabara.composite.attachments.InputFields;
 import com.rcp.practice.zabara.composite.attachments.SWTDoneCheckLine;
-
 
 /**
  * 
